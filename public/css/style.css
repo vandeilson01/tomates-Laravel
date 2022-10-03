@@ -1,0 +1,407 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,600';
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans";
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+}
+
+a {
+  color: #ff8147;
+}
+
+body {
+  background: #ff4800;
+  background: linear-gradient(to bottom, #992c1e 0%, #ff4800 25%, #da6e26 55%, #efaf7a 100%);
+}
+
+.gradient-background {
+  position: absolute;
+  width: inherit;
+}
+
+.timer,.size{
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 40px;
+  width: 100%;
+}
+.timer{
+  background-color: rgba(248, 248, 248, 0.534);
+  position: fixed;
+  /* height: 50px;
+  width: 50px; */
+  /* border-radius: 25px; */
+  bottom: 0;
+  /* left: 0%; */
+  z-index: 3;
+  text-align: left;
+  text-indent: 20%;
+}
+.size{
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  bottom: 0;
+  right: 20%;
+  z-index: 3;
+}
+#wrapper,
+#touch-layer,
+#waves,
+#info-screen {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+#screen{
+  height: 100%;
+  width: 100%;
+  position: center;
+}
+
+
+
+#picture{
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  opacity: 1;
+}
+.compar{
+  position: fixed;
+  right: 0;
+  bottom: 0%;
+  z-index: 100;
+}
+.compar ul{
+  list-style: none;
+}
+.compar ul li a button{
+  border: none;
+  border-radius: none;
+}
+.compar ul li button{
+  border: none;
+  border-radius: none;
+  width: 70px;
+  height: 70px;
+}
+.balltwo{
+  display: none;
+  width: 110px;
+  height: 110px;
+  background-image: url('../tomato.png');
+  position: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: 40;
+  left: 46%;
+  bottom: 2%;
+}
+#title {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  color: white;
+  margin-top: 0.5em;
+  z-index: 11;
+}
+
+#screen,
+#capture-screen,
+#ring-screen {
+  position: fixed;
+}
+
+/* Accuracy ring */
+/* #ring-screen {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+} */
+/* 
+#ring {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border: 2px solid white;
+  border-radius: 100px;
+} */
+
+/* #ring-active {
+  border: 2px solid #dd3517;
+  border-radius: 100px;
+} */
+
+/* #ring-fill {
+  width: 150px;
+  height: 150px;
+} */
+
+#points{
+  padding: 0 !important;
+  margin: 0 !important;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  /* background-color: red; */
+  z-index: 5;
+}
+
+
+#point, #point2{
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 50%;
+  padding: 2%;
+  float: left;
+  font-size: 40px;
+  /* position: fixed; */
+  line-height: 40px;
+  height: inherit;
+  background-color: rgba(248, 248, 248, 0.534);
+  text-align: center;
+}
+/* Capture Screen */
+#capture-screen {
+  display: flex;
+  flex-direction: column;
+  background-color: #222;
+  z-index: 12;
+}
+
+#poof-container {
+  position: fixed;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#poof {
+  width: 100%;
+  height: 20px;
+  opacity: 0.8;
+  background-image: url("../tomato.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+#capture-ball {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-image: url("../tomato.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+#capture-ball-button-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+#capture-ball-button {
+  width: 30px;
+  height: 30px;
+  margin-top: -20px;
+  border-radius: 20px;
+  opacity: 0.8;
+  background-color: red;
+}
+
+#target-container {
+  position: relative;
+  background-color: red;
+  width: 100%;
+  height: 100%;
+}
+
+#target {
+  text-align: center;
+  width:2000px;
+  /* left: 0; */
+  /* float: left; */
+  height: 2000px;
+  /* transform: rotate(-10deg); */
+  background-image: url("https://www.infomoney.com.br/wp-content/uploads/2021/10/Lula_coletiva.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /* z-index: 2; */
+  /* margin-right: 1px; */
+  border-radius: 1%;
+  border: 1px solid #da6e26;
+  /* opacity: 0.7; */
+  /* display:block !important; */
+
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+#target2 {
+  text-align: center;
+  width: 2000px;
+  height: 2000px;
+  /* transform: rotate(-10deg); */
+  background-image: url("https://anoticiadoceara.com.br/wp-content/uploads/2022/01/presidente-Jair-Bolsonaro.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /* z-index: 2; */
+  border-radius: 1%;
+  border: 1px solid #da6e26;
+  /* opacity: 0.7; */
+  /* display:block !important; */
+
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#ball {
+  position: fixed;
+  height: 100px;
+  width: 100px;
+  border-radius: 25px;
+  /* bottom: 10%; */
+  background-image: url("../tomato.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: 3;
+}
+
+#touch-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 10;
+}
+
+#capture-status {
+  position: absolute;
+  font-size: 1.5em;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1em 0.2em;
+  color: #FFF;
+}
+
+#particles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.particle {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  background-color: #fff;
+  border-radius: 5px;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+#capture-confetti {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+}
+
+#capture-confetti > div.particle {
+  height: 10px;
+  width: 10px;
+  opacity: 0.9;
+  background-color: #4aa6fb;
+}
+
+/*Info screen*/
+#info-button {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  z-index: 15;
+  color: button;
+  width: 30px;
+  height: 30px;
+  color: #FFF;
+  border: 2px solid #FFF;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#info-screen {
+  z-index: 14;
+}
+
+#info-shade {
+  background-color: #222;
+  opacity: 0.89;
+}
+
+#info-text {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  font-size: 0.9em;
+  color: white;
+}
+
+.flex-center, #screen,
+#capture-screen,
+#ring-screen, #poof-container, #capture-ball-button-container, #target-container, #info-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fixed-full-width, #capture-screen, #info-screen, #info-shade, #info-text {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.hidden {
+  display: none !important;
+}
